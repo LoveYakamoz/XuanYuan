@@ -6,7 +6,7 @@
 # 目的
 1991年圣诞节，荷兰人Guido van Rossumv 发明了[Python](https://www.python.org/), 它是一种面向对象的解释型计算机程序设计语言。其设计哲学是“优雅”、“明确”、“简单”
 
-2005年， 陈儒先生阅读Python2.4.版本代码写下了[《Python源码剖析》](http://blog.csdn.net/balabalamerobert/article/details/567580)一系列文章，并装订成书，为Python开发者提供了非常大的帮助。
+2005年， 陈儒先生阅读Python2.4.1版本代码写下了[《Python源码剖析》](http://blog.csdn.net/balabalamerobert/article/details/567580)一系列文章，并装订成书，为Python开发者提供了非常大的帮助。
 
 Python在近些年，在数据分析及机器学习领域流光溢彩，成为相关领域从业者的最佳选择之一。自陈儒先生落笔到现在，Python版本又进行了非常多的演化。
     
