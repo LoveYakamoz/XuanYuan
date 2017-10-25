@@ -73,11 +73,11 @@ Python在执行时，首先会将.py文件中的源代码编译成Python的byte 
 
 **Modules**：使用C语言编写的库，主要是对计算效率要求较高的模块。
 
-**Objects**: Python内建对象，如整数、string、list、dict等。
+**Objects**: Python语言的内建对象，如整数、string、list、dict等。
 
-**Parser**: Python词法分析器，语法分析器。
+**Parser**: Python语言的词法分析器，语法分析器。
 
-**Python**: Python解释器中的编译器及执行引擎。是Python运行的核心。
+**Python**: Python语言的解释器中的编译器及执行引擎。是Python运行的核心。
 
 **PCBiuld**: 包含了Visual Studio 2015的工程文件，从此处可进行编译Python源代码。
 
