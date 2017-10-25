@@ -84,6 +84,18 @@ Python在执行时，首先会将.py文件中的源代码编译成Python的byte 
 
 
 # 1.3 Windows环境下编译Python
+源码中PCBuild目录下的Readme.txt文件详细介绍了，如何使用Visual Studio 2015开发环境进行编译Python的步骤。
+
+**系统要求**：Windows NT 6.0版本及其以上（如Vista， Windows Server 2008，及后续版本），32位或64位均可。
+
+**开发环境**：Microsoft Visual C++ 2015 (MSVC 14.0) 
+
+**两种编译方式**：
+
+    1）打开pcbuild.sln工程后， 进行构建版本(Build Solution)
+
+    2）使用build.bat脚本，默认情况下，以Release配置进行构建32位的程序。如需要其他配置可使用 `build.bat -h` 获得帮助信息
+
 
 # 1.4 Unix环境下编译Python
 
