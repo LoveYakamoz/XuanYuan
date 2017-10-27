@@ -49,6 +49,7 @@ Python2.x版本与Python3.x版本有较大的变化。让人产生错觉，认�
 ## 附录
 * Python各版本的演进
 * 其他python版本，如jpython等
+* 各对象等关系图
 
 # 写作方法
 使用markdonw来编写
