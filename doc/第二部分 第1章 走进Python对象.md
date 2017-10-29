@@ -38,8 +38,12 @@ Python对象是在堆上的结构体，而非栈上。并且使用特殊的机�
 
 其中PyVarObject是一个PyObject结构体加上一个ob_size。因此，对象的本源便是PyObject。所以说，Python中任何对象均可以使用'PyObject *'访问。
 
-## 类型的对象
-在PyObject结构体中，除了引用计数器还有一个表示类型指针：
+当对象被复制或删除时，对象的引入计数会相应的增加或减少。当计数器为0时，表示此对象被引用为0，可以将其从堆上删除，即回收其所占的内存。
+
+## 对象的类型
+如前文所述，对象是数据与操作的统一体，并存储在内存中。从字面上来看， PyObject结构体“似乎”还缺少很多内容，如对象的大小，否则无法对其分配内存。其实
+在PyObject结构体中，除了引用计数器还有一个表示类型指针，其具体定义为：
+
     #define PyObject_VAR_HEAD      PyVarObject ob_base;
 
     typedef struct _typeobject {
@@ -66,7 +70,8 @@ Python对象是在堆上的结构体，而非栈上。并且使用特殊的机�
         // 以下省略
 
     } PyTypeObject;
-类型也是一个对象，且是一个可变长对象。
+类型也是一个对象，且是一个可变长对象。到目前为止，我们“似乎”陷入了一个循环。
+
 
 /*
 Objects are structures allocated on the heap.  Special rules apply to
@@ -77,10 +82,6 @@ exceptions to the first rule; the standard types are represented by
 statically initialized type objects, although work on type/class unification
 for Python 2.2 made it possible to have heap-allocated type objects too).
 
-An object has a 'reference count' that is increased or decreased when a
-pointer to the object is copied or deleted; when the reference count
-reaches zero there are no references to the object left and it can be
-removed from the heap.
 
 An object has a 'type' that determines what it represents and what kind
 of data it contains.  An object's type is fixed when it is created.
@@ -167,5 +168,6 @@ typedef struct {
 
 
 ## 对象的引用计数
+
 
 ## 走进大师...
