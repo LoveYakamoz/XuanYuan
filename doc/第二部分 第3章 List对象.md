@@ -22,49 +22,50 @@ List是一个可以修改，增加，删除的对象，很明显，它是一个�
         */
         Py_ssize_t allocated;
     } PyListObject;
+对象的类型定义为：
 
-PyTypeObject PyList_Type = {
-    PyVarObject_HEAD_INIT(&PyType_Type, 0)
-    "list",
-    sizeof(PyListObject),
-    0,
-    (destructor)list_dealloc,                   /* tp_dealloc */
-    0,                                          /* tp_print */
-    0,                                          /* tp_getattr */
-    0,                                          /* tp_setattr */
-    0,                                          /* tp_reserved */
-    (reprfunc)list_repr,                        /* tp_repr */
-    0,                                          /* tp_as_number */
-    &list_as_sequence,                          /* tp_as_sequence */
-    &list_as_mapping,                           /* tp_as_mapping */
-    PyObject_HashNotImplemented,                /* tp_hash */
-    0,                                          /* tp_call */
-    0,                                          /* tp_str */
-    PyObject_GenericGetAttr,                    /* tp_getattro */
-    0,                                          /* tp_setattro */
-    0,                                          /* tp_as_buffer */
-    Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HAVE_GC |
-        Py_TPFLAGS_BASETYPE | Py_TPFLAGS_LIST_SUBCLASS,         /* tp_flags */
-    list_doc,                                   /* tp_doc */
-    (traverseproc)list_traverse,                /* tp_traverse */
-    (inquiry)list_clear,                        /* tp_clear */
-    list_richcompare,                           /* tp_richcompare */
-    0,                                          /* tp_weaklistoffset */
-    list_iter,                                  /* tp_iter */
-    0,                                          /* tp_iternext */
-    list_methods,                               /* tp_methods */
-    0,                                          /* tp_members */
-    0,                                          /* tp_getset */
-    0,                                          /* tp_base */
-    0,                                          /* tp_dict */
-    0,                                          /* tp_descr_get */
-    0,                                          /* tp_descr_set */
-    0,                                          /* tp_dictoffset */
-    (initproc)list_init,                        /* tp_init */
-    PyType_GenericAlloc,                        /* tp_alloc */
-    PyType_GenericNew,                          /* tp_new */
-    PyObject_GC_Del,                            /* tp_free */
-};
+    PyTypeObject PyList_Type = {
+        PyVarObject_HEAD_INIT(&PyType_Type, 0)
+        "list",
+        sizeof(PyListObject),
+        0,
+        (destructor)list_dealloc,                   /* tp_dealloc */
+        0,                                          /* tp_print */
+        0,                                          /* tp_getattr */
+        0,                                          /* tp_setattr */
+        0,                                          /* tp_reserved */
+        (reprfunc)list_repr,                        /* tp_repr */
+        0,                                          /* tp_as_number */
+        &list_as_sequence,                          /* tp_as_sequence */
+        &list_as_mapping,                           /* tp_as_mapping */
+        PyObject_HashNotImplemented,                /* tp_hash */
+        0,                                          /* tp_call */
+        0,                                          /* tp_str */
+        PyObject_GenericGetAttr,                    /* tp_getattro */
+        0,                                          /* tp_setattro */
+        0,                                          /* tp_as_buffer */
+        Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HAVE_GC |
+            Py_TPFLAGS_BASETYPE | Py_TPFLAGS_LIST_SUBCLASS,         /* tp_flags */
+        list_doc,                                   /* tp_doc */
+        (traverseproc)list_traverse,                /* tp_traverse */
+        (inquiry)list_clear,                        /* tp_clear */
+        list_richcompare,                           /* tp_richcompare */
+        0,                                          /* tp_weaklistoffset */
+        list_iter,                                  /* tp_iter */
+        0,                                          /* tp_iternext */
+        list_methods,                               /* tp_methods */
+        0,                                          /* tp_members */
+        0,                                          /* tp_getset */
+        0,                                          /* tp_base */
+        0,                                          /* tp_dict */
+        0,                                          /* tp_descr_get */
+        0,                                          /* tp_descr_set */
+        0,                                          /* tp_dictoffset */
+        (initproc)list_init,                        /* tp_init */
+        PyType_GenericAlloc,                        /* tp_alloc */
+        PyType_GenericNew,                          /* tp_new */
+        PyObject_GC_Del,                            /* tp_free */
+    };
 其中list_methods为：
 
     static PyMethodDef list_methods[] = {
@@ -152,6 +153,5 @@ PyTypeObject PyList_Type = {
     #define PyList_GET_SIZE(op)    Py_SIZE(op)
     #define _PyList_ITEMS(op)      (((PyListObject *)(op))->ob_item)
     #endif
-
 
 # 走进大师
