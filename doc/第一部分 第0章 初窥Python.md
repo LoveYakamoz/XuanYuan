@@ -96,6 +96,13 @@ Python在执行时，首先会将.py文件中的源代码编译成Python的byte 
 
     2）使用build.bat脚本，默认情况下，以Release配置进行构建32位的程序。如需要其他配置可使用 `build.bat -h` 获得帮助信息
 
+**编译出错**：windows sdk version 10.0.15063 was not found，解决方案是根据Fix python 3.6 build failure with VS 2015 and WinSDK!=10.0.15063所说的方法，打开python.props, 将第77行
+
+    <DefaultWindowsSDKVersion>10.0.15063.0</DefaultWindowsSDKVersion>
+
+更改为
+
+    <DefaultWindowsSDKVersion Condition="$(_RegistryVersion) == '10.0.15063'">10.0.15063.0</DefaultWindowsSDKVersion>
 
 # 1.4 Unix环境下编译Python
 
